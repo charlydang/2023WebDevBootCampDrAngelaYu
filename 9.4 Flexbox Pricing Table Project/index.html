@@ -11,27 +11,43 @@
       font-family: 'Sono', sans-serif;
     }
 
-    #pricing-container {
+    .pricing-container {
       display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      height: 100vh;
     }
 
-    #pricing-plan {
-      background-color: black;
-      text-align: center;
-      display: flex;
-      border-radius: 10%;
-      border: 10px solid green;
+    .card {
+      background: lightgray;
+      border: 30px solid white;
+      border-radius: 5%;
+      display: inline-block;
+      width: 280px;
+      height: 200px;
+      padding: 20px;
 
     }
 
- 
+    .plan-button {
+      margin: auto;
+      left: 50%;
+      display: flex;
+      border: none;
+      outline: none;
+      padding: 5px;
+    }
+
     button {
       color: white;
-      background-color: orange;
-      border-radius: 10%;
-      margin: 0;
-      
+      background-color: #ff6600;
+      border-radius: 15%;
+      margin: 0;      
     }
+
 
     .plan-price{
       font-weight: bold;
@@ -42,25 +58,55 @@
     li {
       list-style-type: none;
       text-align: center;
+      font-size: small;
+      padding: 3px;
     }
 
     .plan-title {
       font-weight: bold;
       text-align: center;
+      margin-bottom: 10px;
     }
 
     /* Hint: What can you do with a media query and flexbox? */
     @media (max-width: 1250px) {
       
+      .pricing-container {
+        display:flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .card {
+        background: lightgray;
+        border: 30px solid white;
+        border-radius: 5%;
+        display: block;
+        width: 280px;
+        padding: 20px;
+      }
+
+      .plan-button {
+        margin: auto;
+        left: 50%;
+        display: flex;
+        border: none;
+        outline: none;
+        padding: 5px;
+    }
+
     }
   </style>
 </head>
 
 <body>
   <div class="pricing-container">
-    <div class="pricing-plan">
+    <div class="pricing-plan card">
       <div class="plan-title">Basic</div>
-      <div class="plan-price">$9.99/month</div>
+      <div class="plan-price">$11.99/month</div>
       <ul class="plan-features">
         <li>✅ 10GB Storage</li>
         <li>✅ 1 User</li>
@@ -68,7 +114,7 @@
       </ul>
       <button class="plan-button">Sign Up</a>
     </div>
-    <div class="pricing-plan">
+    <div class="pricing-plan card">
       <div class="plan-title">Standard</div>
       <div class="plan-price">$19.99/month</div>
       <ul class="plan-features">
@@ -78,7 +124,7 @@
       </ul>
       <button class="plan-button">Sign Up</a>
     </div>
-    <div class="pricing-plan">
+    <div class="pricing-plan card">
       <div class="plan-title">Premium</div>
       <div class="plan-price">$49.99/month</div>
       <ul class="plan-features">
